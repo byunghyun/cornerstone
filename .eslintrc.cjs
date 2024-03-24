@@ -1,0 +1,98 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+  ],
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx', '**/*.js', '***/*.jsx'],
+      parser: '@typescript-eslint/parser',
+      settings: {
+        react: {
+          version: 'detect',
+        },
+      },
+      env: {
+        browser: true,
+        node: true,
+        es6: true,
+      },
+      plugins: ['@typescript-eslint', 'prettier', 'simple-import-sort'],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:jsx-a11y/recommended',
+        'prettier',
+        'plugin:prettier/recommended',
+      ],
+      rules: {
+        'no-console': [
+          'warn',
+          {
+            allow: ['warn', 'error', 'info', 'count', 'countReset', 'table'],
+          },
+        ],
+        '@typescript-eslint/no-namespace': 'off',
+        // 'jsx-a11y/anchor-is-valid': [0],
+        'jsx-a11y/tabindex-no-positive': 'off',
+        // 'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': ['off'],
+        '@typescript-eslint/ban-types': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        'react/prop-types': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'jsx-a11y/anchor-is-valid': 'off',
+        // Why would you want unused vars?
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        'react-hooks/exhaustive-deps': 'off',
+        'no-template-curly-in-string': 'error',
+        'object-curly-newline': 0,
+        // "import/named": ["error"],
+        'import/prefer-default-export': 'off',
+        'react/jsx-fragments': 'off',
+        'arrow-body-style': 'off',
+        // "@typescript-eslint/indent": ["error", 2, {"SwitchCase": 1}],
+        'no-undef': 'error',
+        '@typescript-eslint/ban-ts-comment': 'off',
+        'jsx-a11y/alt-text': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'react-hooks/rules-of-hooks': 'off',
+        'react/jsx-key': 'off',
+      },
+    },
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react-refresh'],
+  rules: {
+    'no-unreachable': 'warn',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        ignoreRestSiblings: true,
+        varsIgnorePattern: '^_+$',
+        argsIgnorePattern: '^_+$',
+      },
+    ],
+    'react-hooks/exhaustive-deps': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+  },
+}
